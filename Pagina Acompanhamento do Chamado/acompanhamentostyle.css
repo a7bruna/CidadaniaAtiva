@@ -1,0 +1,190 @@
+/* Reset e configurações globais */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: #344E41;
+}
+
+body {
+    background-color: #DAD7CD;
+    color: #000;
+    line-height: 1.6;
+    padding: 20px;
+    margin: 0;
+    width: 100vw; /* Ocupa 100% da largura da viewport */
+    height: 100vh; /* Ocupa 100% da altura da viewport */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.container {
+    max-width: 100%; /* Ajusta para ocupar toda a largura */
+    height: 100%; /* Ajusta para ocupar toda a altura */
+    margin: 0;
+    padding: 15px;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #A3B18A;
+    padding: 30px;
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Filtro */
+.filtro {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.filtro label {
+    font-weight: bold;
+    color: #000;
+}
+
+.filtro input,
+.filtro select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    width: 100%;
+    max-width: 300px;
+}
+
+.filtro button {
+    padding: 10px 20px;
+    background-color: #253f24;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.filtro button:hover {
+    background-color: #1e331e;
+    transform: scale(1.05);
+}
+
+/* Tabela */
+
+
+.tabela {
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%; /* Ajusta a largura para ocupar todo o espaço do contêiner */
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    font-size: 1em;
+}
+
+th {
+    background-color: #A3B18A;
+    font-weight: bold;
+    color: #000;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.2s ease;
+}
+
+/* Botões de ação */
+.acao button {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.acao button:hover {
+    background-color: #e6e6e6;
+    transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    header {
+        padding: 15px;
+        font-size: 1.3em;
+    }
+
+    .filtro {
+        gap: 15px;
+    }
+
+    .filtro input,
+    .filtro select {
+        max-width: 100%;
+    }
+
+    table, th, td {
+        font-size: 0.9em;
+    }
+
+    .acao button {
+        padding: 5px 10px;
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 1.2em;
+    }
+
+    .filtro {
+        padding: 10px;
+    }
+
+    table, th, td {
+        font-size: 0.8em;
+    }
+
+    .acao button {
+        padding: 4px 8px;
+        font-size: 0.7em;
+    }
+}

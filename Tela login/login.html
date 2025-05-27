@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">    
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login - Cidadania Ativa</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link rel="stylesheet" href="login.css">
+</head>
+<body>
+	<div class="page-container">
+		<nav class="top-nav">
+			<div class="container">
+				<a href="../Pagina Inicial/Index.html" class="brand">
+					<i class="fas fa-city"></i>
+					Cidadania Ativa
+				</a>
+			</div>
+		</nav>
+
+		<main class="login-container">
+			<div class="login-card">
+				<div class="login-header">
+					<h1>
+						<i class="fas fa-user-circle"></i>
+						Entrar
+					</h1>
+					<p class="subtitle">Acesse sua conta para continuar</p>
+				</div>
+				
+				<form id="login-form" class="login-form" method="post" onsubmit="processaFormLogin(event)">
+					<div class="form-group">
+						<label for="username">
+							<i class="fas fa-user"></i>
+							Usuário
+						</label>
+						<input 
+							type="text" 
+							id="username" 
+							name="username" 
+							placeholder="Digite seu usuário"
+							required
+							autocomplete="username"
+						>
+					</div>
+
+					<div class="form-group">
+						<label for="password">
+							<i class="fas fa-lock"></i>
+							Senha
+						</label>
+						<div class="password-input">
+							<input 
+								type="password" 
+								id="password" 
+								name="password" 
+								placeholder="Digite sua senha"
+								required
+								autocomplete="current-password"
+							>
+							<button type="button" class="toggle-password" aria-label="Mostrar senha">
+								<i class="fas fa-eye"></i>
+							</button>
+						</div>
+					</div>
+
+					<div class="form-actions">
+						<button type="submit" class="btn btn-primary">
+							<i class="fas fa-sign-in-alt"></i>
+							Entrar
+						</button>
+					</div>
+
+					<div class="form-links">
+						<a href="../Pagina Esqueci minha senha/Esqueci senha.html" class="link">
+							<i class="fas fa-key"></i>
+							Esqueci minha senha
+						</a>
+						<a href="../Pagina de Cadastro/cadastro.html" class="link">
+							<i class="fas fa-user-plus"></i>
+							Criar nova conta
+						</a>
+					</div>
+				</form>
+			</div>
+		</main>
+	</div>
+
+	<script src="login.js"></script>
+	<script>
+		// Função para processar o formulário de login
+		function processaFormLogin(event) {
+			event.preventDefault();
+
+			const username = document.getElementById('username').value;
+			const password = document.getElementById('password').value;
+
+			// Valida login e redireciona se estiver ok
+			const resultadoLogin = loginUser(username, password);
+			if (resultadoLogin) {
+				window.location.href = '../Menu/Menu.html';
+			} else {
+				// Mostrar mensagem de erro usando o sistema de toast
+				showToast('Usuário ou senha incorretos', 'error');
+			}
+		}
+
+		// Toggle de visibilidade da senha
+		document.querySelector('.toggle-password').addEventListener('click', function() {
+			const passwordInput = document.getElementById('password');
+			const icon = this.querySelector('i');
+			
+			if (passwordInput.type === 'password') {
+				passwordInput.type = 'text';
+				icon.classList.remove('fa-eye');
+				icon.classList.add('fa-eye-slash');
+			} else {
+				passwordInput.type = 'password';
+				icon.classList.remove('fa-eye-slash');
+				icon.classList.add('fa-eye');
+			}
+		});
+
+		// Sistema de notificações toast
+		function showToast(message, type = 'error') {
+			const toast = document.createElement('div');
+			toast.className = `toast toast-${type}`;
+			toast.innerHTML = `
+				<i class="fas fa-${type === 'error' ? 'exclamation-circle' : 'check-circle'}"></i>
+				<span>${message}</span>
+			`;
+			
+			document.body.appendChild(toast);
+			
+			setTimeout(() => {
+				toast.classList.add('show');
+				setTimeout(() => {
+					toast.classList.remove('show');
+					setTimeout(() => toast.remove(), 300);
+				}, 3000);
+			}, 100);
+		}
+	</script>
+</body>
+</html>

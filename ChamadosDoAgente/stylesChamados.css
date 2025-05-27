@@ -1,0 +1,110 @@
+/* stylesChamados.css */
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+header{
+    background-color: #A3B18A;
+    padding: 2rem 1rem 1rem;
+    text-align: center;
+}
+
+header h1 {
+    color: #344E41;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+body {    
+    margin: 0;
+    padding: 0;
+    background-color: #DAD7CD;
+    color: #344E41;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+fieldset {
+    margin-bottom: 20px;
+    border-color: black;
+}
+
+Legend{
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, textarea, select {
+    width: 98%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1.5px solid black;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tab-button{
+    background-color: #588157;
+    color: white;
+    font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .container {
+        width: 95%;
+    }
+}
+
+@media (min-width: 1025px) {
+    .container {
+        width: 80%;
+    }
+}

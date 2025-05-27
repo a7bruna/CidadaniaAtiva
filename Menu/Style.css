@@ -1,0 +1,220 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+   
+header h1 {
+    color: #344E41;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+header p {
+    color: #344E41;
+    font-size: 1.0rem;
+    font-weight: bold;
+}
+  
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #DAD7CD;
+    color: #344E41;
+}
+
+.icon-small {
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+}
+
+/* Ícones centrais */
+.central-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+}
+
+/* Ícones principais */
+.icon {
+    width: 100px;
+    height: 100px;
+}
+
+
+/* Ajustes visuais */
+/* .table {
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    justify-items: auto;
+} */
+
+.tabela {
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%; /* Ajusta a largura para ocupar todo o espaço do contêiner */
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    font-size: 1em;
+}
+
+th {
+    background-color: #A3B18A;
+    font-weight: bold;
+    color: #000;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.2s ease;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    justify-items: center;
+  }
+
+.service-card {
+    background-color: #A3B18A;
+    padding: 1rem;
+    border-radius: 12px;
+    border-top: 6px solid #3A5A40;
+    width: 70%;
+    max-width: 200px;
+    height: 100%;
+    max-height: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .service-card h3 {
+    color: #344E41;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+
+
+/* Responsividade para telas pequenas */
+@media (max-width: 576px) {  
+    header {
+        background-color: #588157; 
+        color: #000;
+    }
+
+    .icon {
+        /*width: 30px;
+        height: 30px;*/
+        display: none;
+    }
+    
+    .menu-principal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+     .table {
+        font-size: 10px; /* Reduzir o tamanho das fontes na tabela */
+    }
+ 
+    /* Ajustar a posição dos ícones acima do cabeçalho */
+    .top-icons-container {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }    
+
+    tr:nth-child(even){
+        background-color: #588157;
+    }  
+}
+
+/* telas médias */
+@media (min-width: 577px) and (max-width: 768px) {
+    header {
+        background-color: #DAD7CD; 
+        color: #000;
+    }
+
+    /* Posicionar os ícones acima do cabeçalho */
+    .top-icons-container {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 15px;
+    }
+
+    .service-card icon {
+        /*display: none;  Ocultar ícones em telas médias */
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;    
+    }
+
+    .icon {
+        width: 40px;
+        height: 40px;
+        /*display: none;*/
+    }
+    
+    .table {
+        font-size: 12px; /* Reduzir o tamanho das fontes na tabela */
+    }
+
+    tr:nth-child(even){
+        background-color: #DAD7CD;
+    }  
+}
+
+/* telas grandes */
+@media (min-width: 769px) {
+    header {
+        background-color: #A3B18A ;
+        color: #000;
+    }
+
+   /* Ajustar a posição dos ícones acima do cabeçalho */
+   .top-icons-container {
+    display: flex;
+    justify-content: right;
+    margin-bottom: 10px;}
+
+    /* Exibir ícones normalmente */
+    .service-card icon {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    tr:nth-child(even){
+        background-color: #A3B18A;
+    }  
+}

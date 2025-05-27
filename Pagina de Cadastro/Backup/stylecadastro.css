@@ -1,0 +1,147 @@
+/* Reset e Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #DAD8CC;
+    padding: 20px;
+}
+
+/* Títulos */
+h1, h2 {
+    color: #344E41;
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 1rem;
+}
+
+legend {
+    font-size: 25px;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+    color: #344E41;
+}
+
+fieldset{
+    border: 2px solid #557E54;
+    border-radius: 0.625rem;
+    padding: 1.25rem;
+    color: #344E41;
+}
+
+/* Formulário */
+form {
+    background-color: #A2B18A;
+    padding: 2.5rem;
+    border-radius: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Barra Horizontal */
+.barra-horizontal {
+    width: 100%;
+    height: 5px;
+    background-color: #557E54;
+}
+
+/* Container = Formulário */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+}
+
+.endereço, .senha {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Botão de Cadrastrar */
+button {
+    background-color: #557E54;
+    color: #fff;
+    border: none;
+    padding: 0.9375rem 1.875rem;
+    border-radius: 0.625rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    background-color: #446944;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: scale(0.98);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+button:focus {
+    outline: 2px solid #557E54;
+    outline-offset: 2px;
+}
+
+/* Input, Select e Textarea */
+input, select, textarea {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.3125rem;
+    font-size: 0.875rem;
+    width: 100%;
+    background-color: #fff;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #557E54;
+    box-shadow: 0 0 10px rgba(85, 126, 84, 0.5);
+}
+
+input::placeholder, textarea::placeholder {
+    color: #aaa;
+}
+
+/* Label */
+label {
+    font-weight: bold;
+    margin-bottom: 0.3125rem;
+}
+
+/* Mensagem de Erro 
+.error-message {
+    color: red;
+    font-size: 0.75rem;
+    font-style: italic;
+}
+*/
+
+/* Responsividade */
+@media (max-width: 768px) {
+    form {
+        padding: 1.875rem 1.25rem;
+    }
+
+    button {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.875rem;
+    }
+}

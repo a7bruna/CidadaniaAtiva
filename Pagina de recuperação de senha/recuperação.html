@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Redefinição de Senha</title>
+  <link rel="stylesheet" href="recuperação.css" />
+</head>
+<body>
+  <div class="redefinir-container">
+    <h2>Redefinição de senha</h2>
+
+    <div class="info-box">
+      <span class="check">&#x2714;</span>
+      Um e-mail foi enviado para <strong>********</strong><br />
+      para finalizar o cadastro.
+    </div>
+
+    <p class="descricao">
+      Por favor, insira no campo abaixo o código de ativação que você recebeu por e-mail e redefina uma nova senha.
+    </p>
+
+    <form onsubmit="redefinirSenha(event)">
+      <input type="text" id="codigo" placeholder="Código" required />
+      <input type="password" id="novaSenha" placeholder="Nova senha" required />
+      <input type="password" id="confirmaSenha" placeholder="Confirme a nova senha" required />
+      <button type="submit">Redefinir</button>
+    </form>
+  </div>
+
+  <script src="recuperação.js"></script>
+</body>
+</html>

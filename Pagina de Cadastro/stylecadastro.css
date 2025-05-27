@@ -1,0 +1,329 @@
+:root {
+  --primary: #2E7D32;
+  --primary-dark: #1B5E20;
+  --primary-light: #4CAF50;
+  --secondary: #66BB6A;
+  --background: #F1F8E9;
+  --surface: #ffffff;
+  --text: #1B5E20;
+  --text-light: #558B2F;
+  --danger: #c62828;
+  --success: #2E7D32;
+  --border-radius: 12px;
+  --shadow-sm: 0 1px 3px rgba(27, 94, 32, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(27, 94, 32, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(27, 94, 32, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Navigation */
+.top-nav {
+  background-color: var(--surface);
+  box-shadow: var(--shadow-sm);
+  padding: 1rem 0;
+}
+
+.brand {
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.brand:hover {
+  color: var(--primary-dark);
+}
+
+/* Register Container */
+.register-container {
+  flex: 1;
+  padding: 2rem;
+}
+
+.register-card {
+  background: var(--surface);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.register-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.register-header h1 {
+  color: var(--text);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.register-header .subtitle {
+  color: var(--text-light);
+}
+
+/* Form Styles */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-section {
+  background: var(--background);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+}
+
+.form-section h2 {
+  color: var(--text);
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  color: var(--text);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--primary-light);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  background: var(--surface);
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
+}
+
+.input-with-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-with-button input {
+  padding-right: 3rem;
+  width: 100%;
+}
+
+.btn-icon {
+  position: absolute;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  color: var(--primary);
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.btn-icon:hover {
+  color: var(--primary-dark);
+}
+
+.password-input {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
+  padding: 0.25rem;
+  transition: color 0.3s ease;
+}
+
+.toggle-password:hover {
+  color: var(--primary);
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  flex: 1;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+  background-color: var(--surface);
+  color: var(--text);
+  border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--background);
+}
+
+.form-links {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: var(--primary-dark);
+}
+
+/* Toast Notifications */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--surface);
+  color: var(--text);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transform: translateX(120%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.toast.show {
+  transform: translateX(0);
+}
+
+.toast-error {
+  border-left: 4px solid var(--danger);
+}
+
+.toast-error i {
+  color: var(--danger);
+}
+
+.toast-success {
+  border-left: 4px solid var(--success);
+}
+
+.toast-success i {
+  color: var(--success);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .register-card {
+    padding: 1.5rem;
+  }
+
+  .form-section {
+    padding: 1rem;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

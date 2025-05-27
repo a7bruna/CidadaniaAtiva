@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamados - Formulário</title>
+    <link rel="stylesheet" href="stylesChamados.css">
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header class="text-center p-4">
+        <h1>Chamados do Agente</h1>       
+    </header>
+
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-button" onclick="openTab('dados')">Descrição</button>
+            <button class="tab-button" onclick="openTab('anexo')">Anexo de Imagem</button>
+        </div>
+        <div id="dados" class="tab-content active">
+            <form>
+                <fieldset>
+                    <legend>Dados do Chamado</legend>
+                    <label for="codigo">Código do Chamado:</label>
+                    <input type="text" id="codigo" value="SPVP0001" >                    
+
+                    <label for="servico">Serviços:</label>
+                    <input type="text" id="servico" value="Problemas em Vias Públicas" >
+
+                    <label for="empresa">Empresa:</label>
+                    <input type="text" id="empresa" value="xxxxxxxx">
+
+                    <label for="responsavel">Responsável:</label>
+                    <input type="text" id="responsavel" placeholder="Nome do agente">
+
+                    <label for="status">Status:</label>
+                    <input type="text" id="status" value="EM ABERTO" >
+                </fieldset>
+
+                <fieldset>
+                    <legend>Descrição</legend>
+                    <textarea id="descricao" rows="4">
+Última descrição: A rua possui um buraco que está atrapalhando a passagem de veículos e enchendo de água quando chove.
+                    </textarea>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Informações do Solicitante</legend>
+                    <label for="solicitante">Solicitante:</label>
+                    <input type="text" id="solicitante" placeholder="Nome completo">
+
+                    <label for="telefone">Telefone de Contato:</label>
+                    <input type="tel" id="telefone" placeholder="(31) XXXXX-XXXX">
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" placeholder="seuemail@exemplo.com">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Localização do Problema</legend>
+                    <label for="municipio">Município:</label>
+                    <input type="text" id="municipio" value="Belo Horizonte" readonly>
+
+                    <label for="logradouro">Logradouro:</label>
+                    <input type="text" id="logradouro" placeholder="Rua">
+
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" placeholder="XXXXX-XXX">
+
+                    <label for="numero">Nº:</label>
+                    <input type="text" id="numero" placeholder="Número">
+
+                    <label for="bairro">Bairro:</label>
+                    <input type="text" id="bairro" placeholder="Bairro">
+                </fieldset>
+
+                <button class="tab-button" type="submit">Salvar</button>                
+                <button class="tab-button" type="button" onclick="window.history.back()">Fechar</button>
+                
+            </form>
+        </div>
+        <div id="anexo" class="tab-content">
+            <h2>Anexo de Imagem</h2>
+            <input type="file" id="imagem" name="imagem">
+        </div>
+    </div>
+    <script src="scriptChamados.js"></script>
+</body>
+</html>

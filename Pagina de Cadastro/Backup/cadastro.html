@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="stylecadastro.css">
+    <script src="cadastro.js" defer></script>
+</head>
+<body>
+    <form action="" method="POST" aria-labelledby="form-title">
+        <h1 id="form-title">Faça o seu cadastro</h1>
+        <hr class="barra-horizontal">
+
+        <!-- Dados Pessoais -->
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="exemplo@gmail.com" required>
+            </div>
+            <div class="form-group">
+                <label for="numerodecontato">Número de Contato:</label>
+                <input type="tel" id="numerodecontato" name="numerodecontato" placeholder="(XX) XXXXX-XXXX" required pattern="\(\d{2}\) \d{5}-\d{4}" title="Digite no formato (XX) XXXXX-XXXX">
+            </div>
+            <div class="form-group">
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf" placeholder="Apenas números" required pattern="\d{11}" title="Digite um CPF válido com 11 números.">
+            </div>
+        </fieldset>
+
+        <!-- Endereço -->
+        <fieldset>
+            <legend>Endereço</legend>
+            <div class="form-group">
+                <label for="logradouro">Logradouro:</label>
+                <input type="text" id="logradouro" name="logradouro" placeholder="Rua, Avenida, etc." required>
+            </div>
+            <div class="form-group">
+                <label for="numero">Número:</label>
+                <input type="number" id="numero" name="numero" placeholder="Número da residência" required>
+            </div>
+            <div class="form-group">
+                <label for="bairro">Bairro:</label>
+                <input type="text" id="bairro" name="bairro" placeholder="Digite o bairro" required>
+            </div>
+            <div class="form-group">
+                <label for="cep">CEP:</label>
+                <input type="text" id="cep" name="cep" placeholder="Apenas números" required pattern="\d{8}" title="Digite um CEP válido com 8 números.">
+            </div>
+            <div class="form-group">
+                <label for="cidade">Cidade:</label>
+                <select id="cidade" name="cidade" required>
+                    <option value="" disabled selected>Selecione a cidade</option>
+                    <!-- Lista de cidades -->
+                    <option value="Belo Horizonte">Belo Horizonte</option>
+                    <option value="Uberlândia">Uberlândia</option>
+                    <option value="Contagem">Contagem</option>
+                    <option value="Juiz de Fora">Juiz de Fora</option>
+                    <option value="Betim">Betim</option>
+                    <option value="Montes Claros">Montes Claros</option>
+                    <option value="Ribeirão das Neves">Ribeirão das Neves</option>
+                    <option value="Uberaba">Uberaba</option>
+                    <option value="Governador Valadares">Governador Valadares</option>
+                    <option value="Ipatinga">Ipatinga</option>
+                    <option value="Sete Lagoas">Sete Lagoas</option>
+                    <option value="Divinópolis">Divinópolis</option>
+                    <option value="Santa Luzia">Santa Luzia</option>
+                    <option value="Ibirité">Ibirité</option>
+                    <option value="Poços de Caldas">Poços de Caldas</option>
+                    <option value="Patos de Minas">Patos de Minas</option>
+                    <option value="Teófilo Otoni">Teófilo Otoni</option>
+                    <option value="Pouso Alegre">Pouso Alegre</option>
+                    <option value="Barbacena">Barbacena</option>
+                    <option value="Varginha">Varginha</option>
+                    <option value="Conselheiro Lafaiete">Conselheiro Lafaiete</option>
+                    <option value="Sabará">Sabará</option>
+                    <option value="Itabira">Itabira</option>
+                    <option value="Araguari">Araguari</option>
+                    <option value="Passos">Passos</option>
+                    <option value="Ituiutaba">Ituiutaba</option>
+                    <option value="Muriaé">Muriaé</option>
+                    <option value="Itajubá">Itajubá</option>
+                    <option value="Cataguases">Cataguases</option>
+                    <option value="Nova Lima">Nova Lima</option>
+                    <option value="Timóteo">Timóteo</option>
+                    <option value="Coronel Fabriciano">Coronel Fabriciano</option>
+                    <option value="Lavras">Lavras</option>
+                    <option value="São João del-Rei">São João del-Rei</option>
+                    <option value="Caratinga">Caratinga</option>
+                    <option value="Ubá">Ubá</option>
+                    <option value="Curvelo">Curvelo</option>
+                    <option value="Conceição do Mato Dentro">Conceição do Mato Dentro</option>
+                    <option value="Ouro Preto">Ouro Preto</option>
+                    <option value="Mariana">Mariana</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="estado">Estado:</label>
+                <select id="estado" name="estado" required>
+                    <option value="MG" selected>Minas Gerais</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <!-- Senha -->
+        <fieldset>
+            <legend>Senha</legend>
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="Mínimo 6 caracteres" required minlength="6" title="A senha deve ter pelo menos 6 caracteres.">
+            </div>
+            <div class="form-group">
+                <label for="confirmar-senha">Confirme a senha:</label>
+                <input type="password" id="confirmar-senha" name="confirmar-senha" placeholder="Repita a senha" required>
+            </div>
+        </fieldset>
+
+        <!-- Tipo de Usuário -->
+        <fieldset>
+            <legend>Tipo de Usuário</legend>
+            <div class="form-group">
+            <label for="usuario">Selecione o tipo de usuário:</label>
+            <select id="usuario" name="usuario" required>
+                <option value="" disabled selected>Selecione o seu usuário</option>
+                <option value="Cidadão">Cidadão</option>
+                <option value="Agente">Agente</option>
+            </select>
+            </div>
+        </fieldset>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+</body>
+</html>

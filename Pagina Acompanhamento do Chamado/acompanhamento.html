@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acompanhamento de Chamados</title>
+    <link rel="stylesheet" href="acompanhamentostyle.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Acompanhamento de Chamados</h1>
+        </header>
+
+        <main>
+            <section class="filtro">
+                <form id="filtro">
+                    <label for="codigo">Código do Chamado:</label>
+                    <input type="text" id="codigo" name="codigo" placeholder="Digite aqui...">
+
+                    <label for="servicos">Serviços:</label>
+                    <select id="servicos" name="servicos">
+                        <option value="" disabled selected>Selecione</option>
+                        <option value="ambientais">Ambientais</option>
+                        <option value="lixo">Coleta de Lixo</option>
+                        <option value="iluminacao">Iluminação Pública</option>
+                        <option value="mobilizacao_urbana">Mobilização Urbana</option>
+                        <option value="saude">Saúde</option>
+                        <option value="transito">Trânsito</option>
+                        <option value="outros">Outros</option>
+                    </select>
+
+                    <label for="periodo_inicio">Período de Abertura:</label>
+                    <div class="data">
+                        <input type="date" id="periodo_inicio" name="periodo_inicio">
+                        <span>até</span>
+                        <input type="date" id="periodo_fim" name="periodo_fim">
+                    </div>
+
+                    <label for="status">Status:</label>
+                    <select id="status" name="status">
+                        <option value="" disabled selected>Selecione o status...</option>
+                        <option value="ABERTO">ABERTO</option>
+                        <option value="RESOLVIDO">RESOLVIDO</option>
+                        <option value="EM_ANALISE">EM ANÁLISE</option>
+                        <option value="EM_ESPERA">EM ESPERA</option>
+                    </select>
+
+                    <button type="submit" class="search-button">Buscar</button>
+                </form>
+            </section>
+
+            <section class="tabela">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Serviço</th>
+                            <th>Descrição</th>
+                            <th>Solicitante</th>
+                            <th>Status</th>
+                            <th>Responsável</th>
+                            <th>Abertura</th>
+                            <th>Prioridade</th>
+                            <th>Previsão</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>SPVP00001</td>
+                            <td>Problemas em Vias Públicas</td>
+                            <td>A rua possui um buraco que está atrapalhando...</td>
+                            <td>Nome Completo do Usuário</td>
+                            <td>ABERTO</td>
+                            <td>Nome Completo do Agente</td>
+                            <td>02/04/2025 20:45:33</td>
+                            <td>Média</td>
+                            <td>16/04/2025 15:30:00</td>
+                            <td class="acao">
+                                <a href="../ChamadosDoAgente/ChamadosAgente.html" target="_self"><button class="acao">📝</button></a>
+                                <a href="../ChamadosDoUsuario/ChamadosDoUsuario.html" target="_self"><button class="acao">📄</button></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script src="acompanhamento.js"></script>
+
+</body>
+</html>

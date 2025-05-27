@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=2.5">
+        <title>Cidadania Ativa</title>
+        <link rel="stylesheet" href="Style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="menu.js"></script>
+    </head>
+
+    <body>
+        
+        <!-- Cabeçalho -->
+        <header class="text-center p-4">
+            <h1>Cidadania Ativa</h1>
+            <p>Ajude a construir um ambiente urbano mais sustentável, seguro e transparente!</p>
+        </header>
+
+        <!-- Bloco separado para Configurações e Usuário -->
+        <div class="top-icons-container">
+            <div class="top-icons">
+                <div class="dropdown d-inline-block">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="config_icon.png" class="icon-small" alt="Configurações">
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="configuracoes.html">Configurações</a>
+                        <a class="dropdown-item" href="preferencias.html">Preferências</a>
+                    </div>
+                </div>
+                
+                <div class="dropdown d-inline-block">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="user_icon.png" class="icon-small" alt="Usuário">
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="perfil.html">Meu Perfil</a>
+                        <a class="dropdown-item" href="logout.html">Sair</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        
+        <main>
+            <h2 style="text-align: center; color: #2a3d45;">Serviços</h2>
+            <div class="services">            
+                <div class="service-card">
+                    <a href="../Pagina Abertura de Chamado/aberturadechamado.html" target ="_self">  
+                        <h3>Abrir Chamado</h3>                       
+                        <img src="abrir_chamado_icon.png" id ="imgChamado" class="icon" alt="Abrir Chamado">                
+                    </a> 
+                </div>
+                <div class="service-card">
+                    <a href="../Pagina Acompanhamento do Chamado/acompanhamento.html" target ="_self"> 
+                        <h3>Chamados</h3>
+                        <img src="meus_chamados_icon.png" id ="imgMeuChamado" class="icon" alt="Meus Chamados">
+                    </a>
+                </div>
+                <div class="service-card">            
+                    <a href="../Pagina Acompanhamento do Chamado/acompanhamento.html" target="_self">              
+                        <h3>Resolver Chamado</h3>
+                        <img src="resolver_chamado_icon.png" id ="imgResolveChamado" class="icon" alt="Resolver Chamado">
+                    </a>
+                </div>
+                <div class="service-card">                        
+                    <a href="../Pagina acompanhe sua solicitação/acompanhamento.html" target = "_self">
+                        <h3>Tutorial</h3>
+                        <img src="tutorial_icon.png" id ="imgTutorial" class="icon" alt="Tutorial">                                    
+                    </a>
+                </div>        
+            </div>            
+        
+
+            <!-- Tabela de Chamados -->
+            <!--div class="container mt-4"-->
+            <section class="tabela">
+                <table class="table table-striped custom-table">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>ID</th>
+                            <th>Data</th>
+                            <th>Descrição</th>
+                            <th>Local</th>
+                            <th>Status</th>
+                            <th>Responsável</th>
+                            <th>Abertura</th>
+                            <th>Prioridade</th>
+                            <th>Previsão</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>001</td>
+                            <td>24/04/2025</td>
+                            <td>Buraco na Rua A</td>
+                            <td>Rua A, Centro</td>
+                            <td>Aberto</td>
+                        </tr>
+                        <tr>
+                            <td>002</td>
+                            <td>22/04/2025</td>
+                            <td>Sinalização danificada</td>
+                            <td>Avenida B, Zona Sul</td>
+                            <td>Resolvido</td>
+                        </tr>
+                        <tr>
+                            <td>003</td>
+                            <td>23/04/2025</td>
+                            <td>Árvore caída na Praça C</td>
+                            <td>Praça C, Bairro Verde</td>
+                            <td>Em andamento</td>
+                        </tr>
+                        <tr>
+                            <td>004</td>
+                            <td>21/04/2025</td>
+                            <td>Semáforo apagado na Av. D</td>
+                            <td>Avenida D, Bairro Azul</td>
+                            <td>Pendente</td>
+                        </tr>
+                        <tr>
+                            <td>005</td>
+                            <td>20/04/2025</td>
+                            <td>Acúmulo de lixo na rua E</td>
+                            <td>Rua E, Zona Leste</td>
+                            <td>Em andamento</td>
+                        </tr>
+                        <tr>
+                            <td>006</td>
+                            <td>19/04/2025</td>
+                            <td>Vazamento de água na Rua F</td>
+                            <td>Rua F, Centro</td>
+                            <td>Resolvido</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <!--/div-->
+        </main>        
+       
+    </body>
+</html>

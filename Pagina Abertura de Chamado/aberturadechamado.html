@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Denúncia - Cidadania Ativa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="aberturastyle.css">
+</head>
+<body>
+    <div class="page-container">
+        <nav class="top-nav">
+            <div class="container">
+                <a href="../Pagina Inicial/Index.html" class="brand">
+                    <i class="fas fa-city"></i>
+                    Cidadania Ativa
+                </a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <div class="container">
+                <header class="page-header">
+                    <h1>
+                        <i class="fas fa-bullhorn"></i>
+                        Nova Denúncia
+                    </h1>
+                    <p class="subtitle">Ajude a melhorar nossa cidade reportando problemas</p>
+                </header>
+
+                <form id="complaint-form" class="complaint-form" method="post">
+                    <section class="form-section">
+                        <h2><i class="fas fa-exclamation-circle"></i> Detalhes da Denúncia</h2>
+                        
+                        <div class="form-group">
+                            <label for="txt_problema">Tipo do Problema</label>
+                            <select name="txt_problema" id="txt_problema" required>
+                                <option value="" disabled selected>Selecione o tipo do problema</option>
+                                <option value="ambientais">Problemas Ambientais</option>
+                                <option value="lixo">Coleta de Lixo</option>
+                                <option value="iluminacao">Iluminação Pública</option>
+                                <option value="mobilizacao_urbana">Mobilização Urbana</option>
+                                <option value="saude">Saúde Pública</option>
+                                <option value="transito">Trânsito e Mobilidade</option>
+                                <option value="outros">Outros</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txt_motivo">Descrição Detalhada</label>
+                            <textarea 
+                                name="txt_motivo" 
+                                id="txt_motivo" 
+                                rows="5" 
+                                placeholder="Descreva o problema com o máximo de detalhes possíveis" 
+                                required
+                            ></textarea>
+                            <div class="form-help">
+                                <i class="fas fa-info-circle"></i>
+                                Quanto mais detalhes você fornecer, mais rápido poderemos resolver o problema.
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="form-section">
+                        <h2><i class="fas fa-user"></i> Seus Dados</h2>
+                        
+                        <div class="form-row">
+                            <div class="form-group flex-grow">
+                                <label for="txt_solicitante">Nome Completo</label>
+                                <input 
+                                    type="text" 
+                                    id="txt_solicitante" 
+                                    name="txt_solicitante" 
+                                    placeholder="Digite seu nome completo" 
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="txt_ncontato">Telefone</label>
+                                <input 
+                                    type="tel" 
+                                    id="txt_ncontato" 
+                                    name="txt_ncontato" 
+                                    placeholder="(XX) XXXXX-XXXX" 
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txt_email">E-mail</label>
+                            <input 
+                                type="email" 
+                                id="txt_email" 
+                                name="txt_email" 
+                                placeholder="exemplo@email.com" 
+                                required
+                            >
+                        </div>
+                    </section>
+
+                    <section class="form-section">
+                        <h2><i class="fas fa-map-marker-alt"></i> Local do Problema</h2>
+                        
+                        <div class="form-group">
+                            <label for="txt_cep">CEP</label>
+                            <div class="input-with-button">
+                                <input 
+                                    type="text" 
+                                    id="txt_cep" 
+                                    name="txt_cep" 
+                                    placeholder="XXXXX-XXX" 
+                                    required
+                                >
+                                <button type="button" class="btn-icon" id="buscar-cep">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txt_endereco">Endereço</label>
+                            <input 
+                                type="text" 
+                                id="txt_endereco" 
+                                name="txt_endereco" 
+                                placeholder="Rua, Avenida, etc." 
+                                required
+                            >
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="txt_numero">Número</label>
+                                <input 
+                                    type="text" 
+                                    id="txt_numero" 
+                                    name="txt_numero" 
+                                    placeholder="Nº" 
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group flex-grow">
+                                <label for="txt_bairro">Bairro</label>
+                                <input 
+                                    type="text" 
+                                    id="txt_bairro" 
+                                    name="txt_bairro" 
+                                    placeholder="Nome do bairro" 
+                                    required
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group flex-grow">
+                                <label for="txt_cidade">Cidade</label>
+                                <select id="txt_cidade" name="txt_cidade" required>
+                                    <option value="" disabled selected>Selecione a cidade</option>
+                                    <option value="Belo Horizonte">Belo Horizonte</option>
+                                    <option value="Uberlândia">Uberlândia</option>
+                                    <option value="Contagem">Contagem</option>
+                                    <!-- ... outras cidades ... -->
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="txt_estado">Estado</label>
+                                <select id="txt_estado" name="txt_estado" required>
+                                    <option value="MG" selected>Minas Gerais</option>
+                                </select>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="form-section">
+                        <h2><i class="fas fa-camera"></i> Evidências</h2>
+                        
+                        <div class="form-group">
+                            <label for="txt_imagem">Adicionar Fotos</label>
+                            <div class="file-upload-container">
+                                <div class="file-upload-area" id="dropzone">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <p>Arraste e solte as imagens aqui ou</p>
+                                    <input 
+                                        type="file" 
+                                        id="txt_imagem" 
+                                        name="txt_imagem" 
+                                        accept="image/*" 
+                                        multiple 
+                                        class="file-input"
+                                    >
+                                    <button type="button" class="btn btn-outline" onclick="document.getElementById('txt_imagem').click()">
+                                        Selecionar Arquivos
+                                    </button>
+                                </div>
+                                <div class="image-preview" id="image-preview">
+                                    <!-- Previews serão inseridas aqui via JavaScript -->
+                                </div>
+                            </div>
+                            <div class="form-help">
+                                <i class="fas fa-info-circle"></i>
+                                Você pode adicionar até 5 imagens (máximo 5MB cada).
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="form-actions">
+                        <button type="submit" id="btn_salvar" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Denúncia
+                        </button>
+                        <button type="button" id="btn_cancelar" class="btn btn-secondary" onclick="window.history.back()">
+                            <i class="fas fa-times"></i>
+                            Cancelar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="aberturascript.js"></script>
+    <script>
+        // Sistema de notificações toast
+        function showToast(message, type = 'error') {
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+            toast.innerHTML = `
+                <i class="fas fa-${type === 'error' ? 'exclamation-circle' : 'check-circle'}"></i>
+                <span>${message}</span>
+            `;
+            
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                    setTimeout(() => toast.remove(), 300);
+                }, 3000);
+            }, 100);
+        }
+
+        // Busca de CEP
+        document.getElementById('buscar-cep').addEventListener('click', async function() {
+            const cep = document.getElementById('txt_cep').value.replace(/\D/g, '');
+            
+            if (cep.length !== 8) {
+                showToast('CEP inválido', 'error');
+                return;
+            }
+
+            try {
+                const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+                const data = await response.json();
+
+                if (data.erro) {
+                    showToast('CEP não encontrado', 'error');
+                    return;
+                }
+
+                document.getElementById('txt_endereco').value = data.logradouro;
+                document.getElementById('txt_bairro').value = data.bairro;
+                document.getElementById('txt_cidade').value = data.localidade;
+                document.getElementById('txt_estado').value = data.uf;
+
+                showToast('Endereço preenchido com sucesso!', 'success');
+            } catch (error) {
+                showToast('Erro ao buscar CEP', 'error');
+            }
+        });
+
+        // Máscaras de input
+        function maskPhone(input) {
+            return input.value
+                .replace(/\D/g, '')
+                .replace(/(\d{2})(\d)/, '($1) $2')
+                .replace(/(\d{5})(\d)/, '$1-$2')
+                .replace(/(-\d{4})\d+?$/, '$1');
+        }
+
+        function maskCEP(input) {
+            return input.value
+                .replace(/\D/g, '')
+                .replace(/(\d{5})(\d)/, '$1-$2')
+                .replace(/(-\d{3})\d+?$/, '$1');
+        }
+
+        // Aplicando as máscaras
+        document.getElementById('txt_ncontato').addEventListener('input', function() {
+            this.value = maskPhone(this);
+        });
+
+        document.getElementById('txt_cep').addEventListener('input', function() {
+            this.value = maskCEP(this);
+        });
+
+        // Upload de imagens
+        const dropzone = document.getElementById('dropzone');
+        const imagePreview = document.getElementById('image-preview');
+        const fileInput = document.getElementById('txt_imagem');
+
+        // Previne o comportamento padrão de arrastar e soltar
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropzone.addEventListener(eventName, preventDefaults, false);
+            document.body.addEventListener(eventName, preventDefaults, false);
+        });
+
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        // Destaca a área de upload quando um arquivo é arrastado sobre ela
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropzone.addEventListener(eventName, highlight, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropzone.addEventListener(eventName, unhighlight, false);
+        });
+
+        function highlight(e) {
+            dropzone.classList.add('highlight');
+        }
+
+        function unhighlight(e) {
+            dropzone.classList.remove('highlight');
+        }
+
+        // Manipula o upload de arquivos
+        dropzone.addEventListener('drop', handleDrop, false);
+        fileInput.addEventListener('change', handleFiles, false);
+
+        function handleDrop(e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            handleFiles({ target: { files } });
+        }
+
+        function handleFiles(e) {
+            const files = [...e.target.files];
+            
+            if (files.length > 5) {
+                showToast('Você pode enviar no máximo 5 imagens', 'error');
+                return;
+            }
+
+            files.forEach(file => {
+                if (file.size > 5 * 1024 * 1024) {
+                    showToast(`A imagem ${file.name} excede o limite de 5MB`, 'error');
+                    return;
+                }
+
+                if (!file.type.startsWith('image/')) {
+                    showToast(`O arquivo ${file.name} não é uma imagem`, 'error');
+                    return;
+                }
+
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onloadend = function() {
+                    const preview = document.createElement('div');
+                    preview.className = 'preview-item';
+                    preview.innerHTML = `
+                        <img src="${reader.result}" alt="Preview">
+                        <button type="button" class="remove-image">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    `;
+                    imagePreview.appendChild(preview);
+
+                    preview.querySelector('.remove-image').addEventListener('click', function() {
+                        preview.remove();
+                    });
+                };
+            });
+        }
+
+        // Validação do formulário
+        document.getElementById('complaint-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Aqui você pode adicionar validações adicionais
+            
+            try {
+                cadastraChamado();
+                showToast('Denúncia enviada com sucesso!', 'success');
+                setTimeout(() => {
+                    window.location.href = '../Pagina acompanhe sua solicitação/acompanhamento.html';
+                }, 2000);
+            } catch (error) {
+                showToast(error.message || 'Erro ao enviar denúncia', 'error');
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+    

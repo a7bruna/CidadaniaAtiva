@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Cidadania Ativa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="stylecadastro.css">
+</head>
+
+<body>
+    <div class="page-container">
+        <nav class="top-nav">
+            <div class="container">
+                <a href="../Pagina Inicial/Index.html" class="brand">
+                    <i class="fas fa-city"></i>
+                    Cidadania Ativa
+                </a>
+            </div>
+        </nav>
+
+        <main class="register-container">
+            <div class="register-card">
+                <div class="register-header">
+                    <h1>
+                        <i class="fas fa-user-plus"></i>
+                        Criar Conta
+                    </h1>
+                    <p class="subtitle">Preencha seus dados para se cadastrar</p>
+                </div>
+
+                <form id="register-form" class="register-form" method="post">
+                    <!-- Dados Pessoais -->
+                    <section class="form-section">
+                        <h2><i class="fas fa-user"></i> Dados Pessoais</h2>
+                        
+                        <div class="form-group">
+                            <label for="txt_nome">Nome completo</label>
+                            <input type="text" name="txt_nome" id="txt_nome" placeholder="Digite seu nome completo" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txt_email">E-mail</label>
+                            <input type="email" name="txt_email" id="txt_email" placeholder="exemplo@email.com" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="txt_NContato">Telefone</label>
+                                <input type="tel" name="txt_NContato" id="txt_NContato" placeholder="(XX) XXXXX-XXXX" required pattern="\(\d{2}\) \d{5}-\d{4}">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="txt_cpf">CPF</label>
+                                <input type="text" name="txt_cpf" id="txt_cpf" placeholder="XXX.XXX.XXX-XX" required>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Endereço -->
+                    <section class="form-section">
+                        <h2><i class="fas fa-map-marker-alt"></i> Endereço</h2>
+                        
+                        <div class="form-group">
+                            <label for="txt_cep">CEP</label>
+                            <div class="input-with-button">
+                                <input type="text" name="txt_cep" id="txt_cep" placeholder="XXXXX-XXX" required>
+                                <button type="button" class="btn-icon" id="buscar-cep">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txt_endereco">Endereço</label>
+                            <input type="text" name="txt_endereco" id="txt_endereco" placeholder="Rua, Avenida, etc." required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="txt_numero">Número</label>
+                                <input type="text" name="txt_numero" id="txt_numero" placeholder="Nº" required>
+                            </div>
+
+                            <div class="form-group flex-grow">
+                                <label for="txt_bairro">Bairro</label>
+                                <input type="text" name="txt_bairro" id="txt_bairro" placeholder="Bairro" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group flex-grow">
+                                <label for="txt_cidade">Cidade</label>
+                                <select id="txt_cidade" name="txt_cidade" required>
+                                    <option value="" disabled selected>Selecione a cidade</option>
+                                    <option value="Belo Horizonte">Belo Horizonte</option>
+                                    <option value="Uberlândia">Uberlândia</option>
+                                    <option value="Contagem">Contagem</option>
+                                    <!-- ... outras cidades ... -->
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="txt_estado">Estado</label>
+                                <select id="txt_estado" name="txt_estado" required>
+                                    <option value="MG" selected>Minas Gerais</option>
+                                </select>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Dados de Acesso -->
+                    <section class="form-section">
+                        <h2><i class="fas fa-lock"></i> Dados de Acesso</h2>
+                        
+                        <div class="form-row">
+                            <div class="form-group flex-grow">
+                                <label for="txt_login">Usuário</label>
+                                <input type="text" name="txt_login" id="txt_login" placeholder="Escolha seu nome de usuário" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="txt_tusuario">Tipo de Usuário</label>
+                                <select name="txt_tusuario" id="txt_tusuario" required>
+                                    <option value="" disabled selected>Selecione</option>
+                                    <option value="Cidadão">Cidadão</option>
+                                    <option value="Agente">Agente</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txt_senha">Senha</label>
+                            <div class="password-input">
+                                <input type="password" name="txt_senha" id="txt_senha" placeholder="Mínimo 6 caracteres" required minlength="6">
+                                <button type="button" class="toggle-password" aria-label="Mostrar senha">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="txt_senha2">Confirmar Senha</label>
+                            <div class="password-input">
+                                <input type="password" name="txt_senha2" id="txt_senha2" placeholder="Repita sua senha" required>
+                                <button type="button" class="toggle-password" aria-label="Mostrar senha">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="btn_salvar">
+                            <i class="fas fa-check"></i>
+                            Criar Conta
+                        </button>
+                        <button type="button" class="btn btn-secondary" onclick="window.location.href='../Pagina Inicial/Index.html'">
+                            <i class="fas fa-times"></i>
+                            Cancelar
+                        </button>
+                    </div>
+
+                    <div class="form-links">
+                        <p>Já tem uma conta? <a href="../Tela login/login.html" class="link">Faça login</a></p>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="cadastro.js"></script>
+    <script>
+        // Sistema de notificações toast
+        function showToast(message, type = 'error') {
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+            toast.innerHTML = `
+                <i class="fas fa-${type === 'error' ? 'exclamation-circle' : 'check-circle'}"></i>
+                <span>${message}</span>
+            `;
+            
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                    setTimeout(() => toast.remove(), 300);
+                }, 3000);
+            }, 100);
+        }
+
+        // Função para processar o formulário de cadastro
+        function processaFormCadastro(event) {
+            event.preventDefault();
+
+            // Validação das senhas
+            const senha = document.getElementById('txt_senha').value;
+            const senha2 = document.getElementById('txt_senha2').value;
+
+            if (senha !== senha2) {
+                showToast('As senhas não conferem', 'error');
+                return;
+            }
+
+            // Coleta dos dados do formulário
+            const formData = {
+                login: document.getElementById('txt_login').value,
+                nome: document.getElementById('txt_nome').value,
+                email: document.getElementById('txt_email').value,
+                senha: senha,
+                NContato: document.getElementById('txt_NContato').value,
+                cpf: document.getElementById('txt_cpf').value,
+                endereco: document.getElementById('txt_endereco').value,
+                numero: document.getElementById('txt_numero').value,
+                bairro: document.getElementById('txt_bairro').value,
+                cep: document.getElementById('txt_cep').value,
+                cidade: document.getElementById('txt_cidade').value,
+                estado: document.getElementById('txt_estado').value,
+                tusuario: document.getElementById('txt_tusuario').value
+            };
+
+            // Adiciona o usuário
+            try {
+                addUser(
+                    formData.nome,
+                    formData.login,
+                    formData.senha,
+                    formData.email,
+                    formData.NContato,
+                    formData.cpf,
+                    formData.endereco,
+                    formData.numero,
+                    formData.bairro,
+                    formData.cep,
+                    formData.cidade,
+                    formData.estado,
+                    formData.tusuario
+                );
+                
+                showToast('Cadastro realizado com sucesso!', 'success');
+                setTimeout(() => {
+                    window.location.href = '../Tela login/login.html';
+                }, 2000);
+            } catch (error) {
+                showToast(error.message || 'Erro ao realizar cadastro', 'error');
+            }
+        }
+
+        // Toggle de visibilidade da senha
+        document.querySelectorAll('.toggle-password').forEach(button => {
+            button.addEventListener('click', function() {
+                const input = this.parentElement.querySelector('input');
+                const icon = this.querySelector('i');
+                
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.classList.remove('fa-eye');
+                    icon.classList.add('fa-eye-slash');
+                } else {
+                    input.type = 'password';
+                    icon.classList.remove('fa-eye-slash');
+                    icon.classList.add('fa-eye');
+                }
+            });
+        });
+
+        // Busca de CEP
+        document.getElementById('buscar-cep').addEventListener('click', async function() {
+            const cep = document.getElementById('txt_cep').value.replace(/\D/g, '');
+            
+            if (cep.length !== 8) {
+                showToast('CEP inválido', 'error');
+                return;
+            }
+
+            try {
+                const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+                const data = await response.json();
+
+                if (data.erro) {
+                    showToast('CEP não encontrado', 'error');
+                    return;
+                }
+
+                document.getElementById('txt_endereco').value = data.logradouro;
+                document.getElementById('txt_bairro').value = data.bairro;
+                document.getElementById('txt_cidade').value = data.localidade;
+                document.getElementById('txt_estado').value = data.uf;
+
+                showToast('Endereço preenchido com sucesso!', 'success');
+            } catch (error) {
+                showToast('Erro ao buscar CEP', 'error');
+            }
+        });
+
+        // Máscaras de input
+        function maskCPF(input) {
+            return input.value
+                .replace(/\D/g, '')
+                .replace(/(\d{3})(\d)/, '$1.$2')
+                .replace(/(\d{3})(\d)/, '$1.$2')
+                .replace(/(\d{3})(\d{1,2})/, '$1-$2')
+                .replace(/(-\d{2})\d+?$/, '$1');
+        }
+
+        function maskPhone(input) {
+            return input.value
+                .replace(/\D/g, '')
+                .replace(/(\d{2})(\d)/, '($1) $2')
+                .replace(/(\d{5})(\d)/, '$1-$2')
+                .replace(/(-\d{4})\d+?$/, '$1');
+        }
+
+        function maskCEP(input) {
+            return input.value
+                .replace(/\D/g, '')
+                .replace(/(\d{5})(\d)/, '$1-$2')
+                .replace(/(-\d{3})\d+?$/, '$1');
+        }
+
+        // Aplicando as máscaras
+        document.getElementById('txt_cpf').addEventListener('input', function() {
+            this.value = maskCPF(this);
+        });
+
+        document.getElementById('txt_NContato').addEventListener('input', function() {
+            this.value = maskPhone(this);
+        });
+
+        document.getElementById('txt_cep').addEventListener('input', function() {
+            this.value = maskCEP(this);
+        });
+
+        // Event Listeners
+        document.getElementById('register-form').addEventListener('submit', processaFormCadastro);
+    </script>
+</body>
+</html>

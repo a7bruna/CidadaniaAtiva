@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Denúncia - Cidadania Ativa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="stylesChamadosDoUsuario.css">
+</head>
+<body>
+    <div class="page-container">
+        <nav class="top-nav">
+            <div class="container">
+                <a href="../Pagina Inicial/Index.html" class="brand">
+                    <i class="fas fa-city"></i>
+                    Cidadania Ativa
+                </a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <div class="container">
+                <header class="page-header">
+                    <h1>
+                        <i class="fas fa-file-alt"></i>
+                        Detalhes da Denúncia
+                    </h1>
+                    <p class="subtitle">Acompanhe e atualize as informações da sua denúncia</p>
+                </header>
+
+                <div class="complaint-details">
+                    <div class="tabs">
+                        <button class="tab-button active" data-tab="dados">
+                            <i class="fas fa-info-circle"></i>
+                            Informações
+                        </button>
+                        <button class="tab-button" data-tab="historico">
+                            <i class="fas fa-history"></i>
+                            Histórico
+                        </button>
+                        <button class="tab-button" data-tab="anexos">
+                            <i class="fas fa-images"></i>
+                            Anexos
+                        </button>
+                    </div>
+
+                    <div id="dados" class="tab-content active">
+                        <section class="info-section">
+                            <h2>
+                                <i class="fas fa-clipboard-list"></i>
+                                Dados da Denúncia
+                            </h2>
+                            
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <label>Protocolo</label>
+                                    <div class="info-value" id="protocolo">SPVP0001</div>
+                                </div>
+
+                                <div class="info-item">
+                                    <label>Tipo</label>
+                                    <div class="info-value" id="tipo">Problemas em Vias Públicas</div>
+                                </div>
+
+                                <div class="info-item">
+                                    <label>Status</label>
+                                    <div class="status-badge" id="status">Em Análise</div>
+                                </div>
+
+                                <div class="info-item">
+                                    <label>Data de Abertura</label>
+                                    <div class="info-value" id="data-abertura">15/03/2024</div>
+                                </div>
+                            </div>
+
+                            <div class="description-box">
+                                <label>Descrição do Problema</label>
+                                <div class="description-content" id="descricao">
+                                    A rua possui um buraco que está atrapalhando a passagem de veículos e enchendo de água quando chove.
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="info-section">
+                            <h2>
+                                <i class="fas fa-user"></i>
+                                Dados do Solicitante
+                            </h2>
+
+                            <div class="info-grid">
+                                <div class="info-item full-width">
+                                    <label>Nome</label>
+                                    <input type="text" id="solicitante" placeholder="Nome completo">
+                                </div>
+
+                                <div class="info-item">
+                                    <label>Telefone</label>
+                                    <input type="tel" id="telefone" placeholder="(31) XXXXX-XXXX">
+                                </div>
+
+                                <div class="info-item">
+                                    <label>E-mail</label>
+                                    <input type="email" id="email" placeholder="seuemail@exemplo.com">
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="info-section">
+                            <h2>
+                                <i class="fas fa-map-marker-alt"></i>
+                                Localização
+                            </h2>
+
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <label>CEP</label>
+                                    <div class="input-with-button">
+                                        <input type="text" id="cep" placeholder="XXXXX-XXX">
+                                        <button type="button" class="btn-icon" id="buscar-cep">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="info-item full-width">
+                                    <label>Endereço</label>
+                                    <input type="text" id="logradouro" placeholder="Rua, Avenida, etc.">
+                                </div>
+
+                                <div class="info-item">
+                                    <label>Número</label>
+                                    <input type="text" id="numero" placeholder="Nº">
+                                </div>
+
+                                <div class="info-item">
+                                    <label>Bairro</label>
+                                    <input type="text" id="bairro" placeholder="Bairro">
+                                </div>
+
+                                <div class="info-item">
+                                    <label>Cidade</label>
+                                    <input type="text" id="municipio" value="Belo Horizonte" readonly>
+                                </div>
+
+                                <div class="info-item">
+                                    <label>Estado</label>
+                                    <input type="text" id="estado" value="MG" readonly>
+                                </div>
+                            </div>
+                        </section>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save"></i>
+                                Salvar Alterações
+                            </button>
+                            <button type="button" class="btn btn-secondary" onclick="window.history.back()">
+                                <i class="fas fa-times"></i>
+                                Cancelar
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="historico" class="tab-content">
+                        <section class="info-section">
+                            <h2>
+                                <i class="fas fa-history"></i>
+                                Histórico de Atualizações
+                            </h2>
+
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-icon">
+                                        <i class="fas fa-file-import"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-header">
+                                            <h4>Denúncia Registrada</h4>
+                                            <span class="timeline-date">15/03/2024 14:30</span>
+                                        </div>
+                                        <p>Sua denúncia foi registrada com sucesso no sistema.</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-icon">
+                                        <i class="fas fa-clipboard-check"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-header">
+                                            <h4>Em Análise</h4>
+                                            <span class="timeline-date">16/03/2024 09:15</span>
+                                        </div>
+                                        <p>Sua denúncia está sendo analisada pela equipe técnica.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div id="anexos" class="tab-content">
+                        <section class="info-section">
+                            <h2>
+                                <i class="fas fa-images"></i>
+                                Imagens Anexadas
+                            </h2>
+
+                            <div class="file-upload-container">
+                                <div class="file-upload-area" id="dropzone">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <p>Arraste e solte as imagens aqui ou</p>
+                                    <input 
+                                        type="file" 
+                                        id="imagem" 
+                                        name="imagem" 
+                                        accept="image/*" 
+                                        multiple 
+                                        class="file-input"
+                                    >
+                                    <button type="button" class="btn btn-outline" onclick="document.getElementById('imagem').click()">
+                                        Selecionar Arquivos
+                                    </button>
+                                </div>
+                                <div class="image-preview" id="image-preview">
+                                    <!-- Previews serão inseridas aqui via JavaScript -->
+                                </div>
+                            </div>
+                            <div class="form-help">
+                                <i class="fas fa-info-circle"></i>
+                                Você pode adicionar até 5 imagens (máximo 5MB cada).
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="scriptChamadosDoUsuario.js"></script>
+</body>
+</html>

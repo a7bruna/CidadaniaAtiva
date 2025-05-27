@@ -356,9 +356,65 @@ footer {
 }
 
 .toast {
-  margin-bottom: 10px;
-  min-width: 250px;
+  background: var(--surface);
+  color: var(--text);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 300px;
   max-width: 400px;
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.toast i {
+  font-size: 1.25rem;
+}
+
+.toast.success {
+  border-left: 4px solid var(--success, #2E7D32);
+}
+
+.toast.error {
+  border-left: 4px solid var(--danger, #d32f2f);
+}
+
+.toast.info {
+  border-left: 4px solid var(--info, #0288d1);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+.toast-enter {
+  animation: slideIn 0.3s ease forwards;
+}
+
+.toast-exit {
+  animation: slideOut 0.3s ease forwards;
 }
 
 /* Responsive Design */

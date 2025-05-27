@@ -111,47 +111,47 @@ class ToastNotification {
   }
 
   createToastContainer() {
-    const container = document.createElement('div');
-    container.id = 'toast-container';
-    container.style.cssText = `
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 1000;
-    `;
-    document.body.appendChild(container);
+    if (!document.getElementById('toast-container')) {
+      const container = document.createElement('div');
+      container.id = 'toast-container';
+      document.body.appendChild(container);
+    }
   }
 
   show(message, type = 'info') {
     const toast = document.createElement('div');
-    toast.className = `toast toast-${type}`;
-    toast.style.cssText = `
-      background: var(--surface);
-      color: var(--text);
-      padding: 1rem;
-      border-radius: var(--border-radius);
-      margin-top: 0.5rem;
-      box-shadow: var(--shadow-md);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      animation: slideIn 0.3s ease;
-      border-left: 4px solid var(--${type === 'error' ? 'danger' : 'success'});
-    `;
-
+    toast.className = `toast ${type}`;
+    
     const icon = document.createElement('i');
-    icon.className = `fas fa-${type === 'error' ? 'exclamation-circle' : 'check-circle'}`;
-    icon.style.color = `var(--${type === 'error' ? 'danger' : 'success'})`;
-
+    icon.className = `fas fa-${this.getIconForType(type)}`;
     toast.appendChild(icon);
-    toast.appendChild(document.createTextNode(message));
-
+    
+    const text = document.createElement('span');
+    text.textContent = message;
+    toast.appendChild(text);
+    
     document.getElementById('toast-container').appendChild(toast);
+    
+    // Trigger animation
+    requestAnimationFrame(() => {
+      toast.classList.add('toast-enter');
+    });
 
+    // Remove toast after delay
     setTimeout(() => {
-      toast.style.animation = 'slideOut 0.3s ease forwards';
+      toast.classList.replace('toast-enter', 'toast-exit');
       setTimeout(() => toast.remove(), 300);
     }, 3000);
+  }
+
+  getIconForType(type) {
+    const icons = {
+      success: 'check-circle',
+      error: 'exclamation-circle',
+      info: 'info-circle',
+      warning: 'exclamation-triangle'
+    };
+    return icons[type] || icons.info;
   }
 }
 
